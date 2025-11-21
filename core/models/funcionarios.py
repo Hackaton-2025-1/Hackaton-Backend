@@ -9,6 +9,7 @@ class Funcionarios(models.Model):
     dataNasc = models.DateField()
     email = models.EmailField(max_length=100, unique=True, null=True, blank=True)
     endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE, null=True, blank=True)
+    colecoes = models.ManyToManyField('Colecoes', blank=True)
 
     def __str__(self):
         return f"({self.id}) {self.nome}  "
