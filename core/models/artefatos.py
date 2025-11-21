@@ -1,7 +1,9 @@
 from django.db import models
+from core.models import categorias
 from uploader.models import Image
 
 from .localizacao import Localizacao
+from .categorias import Categorias
 
 
 class Artefatos(models.Model):
@@ -19,7 +21,7 @@ class Artefatos(models.Model):
         blank=True,
         default=None
     )
-
+    categoria = models.ForeignKey(Categorias, on_delete=models.PROTECT, null=True, blank=True)
     localizacao = models.ForeignKey(Localizacao, on_delete=models.CASCADE, null=True, blank=True)
 
 
