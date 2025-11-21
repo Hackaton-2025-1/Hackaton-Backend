@@ -1,5 +1,8 @@
 from django.db import models
 
+from .localizacao import Localizacao
+
+
 class Artefatos(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.TextField()
@@ -7,7 +10,7 @@ class Artefatos(models.Model):
     dataEntrada = models.DateField(auto_now_add=True)
     materiaPrima = models.CharField(max_length=100)
     SubMatPrima = models.CharField(max_length=100)
-    # localizacao = models.ForeignKey('localizacao')
+    localizacao = models.ForeignKey(Localizacao, on_delete=models.CASCADE, null=True, blank=True)
     # img = models.ForeignKey('Imagens', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
