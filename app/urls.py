@@ -15,7 +15,7 @@ from django.conf.urls.static import static
 
 from core.views import UserViewSet
 
-from core.views import ColecoesViewSet, CategoriasViewSet, ArtefatosViewSet
+from core.views import ColecoesViewSet, CategoriasViewSet, ArtefatosViewSet, LocalizacaoViewSet, EnderecoViewSet, FuncionariosViewSet
 
 
 router = DefaultRouter()
@@ -25,6 +25,9 @@ router.register(r'usuarios', UserViewSet, basename='usuarios')
 router.register(r"colecoes", ColecoesViewSet)
 router.register(r"categorias", CategoriasViewSet)
 router.register(r"artefatos", ArtefatosViewSet)
+router.register(r"localizacao", LocalizacaoViewSet)
+router.register(r"endereco", EnderecoViewSet)
+router.register(r"funcionarios", FuncionariosViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

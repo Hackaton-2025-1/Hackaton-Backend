@@ -4,3 +4,4 @@ from .categorias import Categorias
 from .artefatos import Artefatos
 from .endereco import Endereco
 from .funcionarios import Funcionarios
+from .localizacao import Localizacao
