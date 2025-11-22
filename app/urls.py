@@ -10,10 +10,13 @@ from rest_framework.routers import DefaultRouter
 
 from uploader.router import router as uploader_router
 
+
+
+from core.views import UserViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView
 from django.conf import settings
 from django.conf.urls.static import static
 
-from core.views import UserViewSet
 
 
 from core.views import ColecoesViewSet, CategoriasViewSet, ArtefatosViewSet, LocalizacaoViewSet, EnderecoViewSet, FuncionariosViewSet
@@ -47,6 +50,6 @@ urlpatterns = [
     # API
     path('api/', include(router.urls)),
     path('api/media/', include(uploader_router.urls)), 
-
-]
+    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -5,3 +5,4 @@ from .artefatos import ArtefatosSerializer
 from .endereco import EnderecoSerializer
 from .funcionarios import FuncionariosSerializer
 from .localizacao import LocalizacaoSerializer
+
