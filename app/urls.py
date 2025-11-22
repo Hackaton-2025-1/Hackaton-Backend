@@ -15,7 +15,7 @@ from django.conf.urls.static import static
 
 from core.views import UserViewSet
 
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 from core.views import ColecoesViewSet, CategoriasViewSet, ArtefatosViewSet, LocalizacaoViewSet, EnderecoViewSet, FuncionariosViewSet
 
 
@@ -47,8 +47,6 @@ urlpatterns = [
     # API
     path('api/', include(router.urls)),
     path('api/media/', include(uploader_router.urls)), 
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
 ]
 
-urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)

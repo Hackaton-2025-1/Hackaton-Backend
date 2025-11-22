@@ -113,7 +113,8 @@ STATIC_URL = 'static/'
 
 # Configurações de arquivos de mídia (App Uploader)
 MEDIA_ENDPOINT = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 FILE_UPLOAD_PERMISSIONS = 0o640
 
 # Configurações específicas para desenvolvimento, migração e produção
